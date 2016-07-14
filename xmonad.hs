@@ -5,6 +5,7 @@
 import System.IO
 import System.Exit
 import XMonad
+import XMonad.Hooks.UrgencyHook
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
@@ -339,7 +340,7 @@ myStartupHook = return ()
 --
 main = do
   xmproc <- spawnPipe "xmobar" 
-  xmproc <- spawnPipe "emacs"
+--  xmproc <- spawnPipe "emacs"
   xmproc <- spawnPipe "bash .Wall/wall.sh"
   xmonad $ defaults {
       logHook = dynamicLogWithPP $ xmobarPP {
